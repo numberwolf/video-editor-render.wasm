@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="dist-sdk/css/main-render.css" />
+    <script src="dist-sdk/sdk-video-edit-render.js"></script>
+    <script src="dist-sdk/sdk-video-edit-render-define.js"></script>
+    <script src="dist-sdk/sdk-video-edit-render-shader-interface.js"></script>
+    <script src="sdk-render-index.js"></script>
+
+</head>
+<body>
+
+<!--<div id="render1"></div>-->
+<div style="width:1190px;background-color: #e9e9e9;">
+    <!-- ----------------------------------------------------
+     --
+     --
+     --                    render area (top-left
+     --
+     --
+     ----------------------------------------------------- -->
+    <div style="width:100%; height:20px; background-color:blue; color:white;">
+        Render Area (Drag for move; Double click for scale/crop)
+    </div>
+
+
+    <div style="width:100%;height:420px;overflow:hidden;">
+        <!-- ----------------------------------------------------
+         --
+         --
+         --                    render area (top-left
+         --
+         --
+         ----------------------------------------------------- -->
+        <div style="width: 640px; height: 420px; background-color: #c9c9c9;float:left">
+            <div id="render1" style="width: 640px; height: 360px;"></div>
+            <input id="play_slide" type="range" min="0" max="100" step="1" style="width:630px;margin-left: 5px;" value="0" />
+            <div id="play-info-label" style="width:300px;margin-left: 5px;float:left;"></div>
+            <div id="pts-label" style="width:160px;float:right">00:00:00/00:00:00</div>
+        </div>
+
+        <!-- ----------------------------------------------------
+         --
+         --
+         --                    material area (top-right
+         --
+         --
+         ----------------------------------------------------- -->
+        <div style="width: 550px; height: 420px; float:left; background-color:black; overflow:hidden;">
+            <div style="width:100%; height:25px; background-color:blue; color:white;">
+                Timeline Information
+            </div>
+            <textarea id="timeline-info-textarea" style="width:100%; height: 280px; background-color: rgba(30,31,20,1); color:rgba(240,181,53,1);" contenteditable="false">
+Track[0]
+            </textarea>
+            <div style="width:100%; height:25px; background-color:blue; color:white;">
+                1. Add video to timeline
+            </div>
+            <button id="add-video-track-1st">Add Video (to track 1st)</button>
+            <br>
+            <button id="add-pip-track-2nd">Add Picture in Picture (to track 2nd)</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- ----------------------------------------------------
+     --
+     --
+     --                    operations area (medium
+     --
+     --
+     ----------------------------------------------------- -->
+    <div style="width:100%;height: 200px; overflow: hidden">
+        <div style="width:300px;height:200px;float:left;border-right:1px solid white;box-sizing:border-box;">
+            <div style="width:100%; height:20px; background-color:blue; color:white;">
+                Render Player
+            </div>
+
+            <div style="background-color: #2aabd2; width:100%; height:100%;">
+                <div>
+                    <button id="play-pause-btn" style="width:150px;">play/pause</button>
+                </div>
+
+                <div>
+                    <button id="seek-btn" style="width:150px;">seek to</button>
+                    : <input id="seek-input" type="number" min="0.0" max="0.0" step="0.5" value="0.0" style="width:50px;" />
+                </div>
+
+                <div>
+                    <button id="backstep-btn" style="width:150px;">backstep</button>
+                </div>
+
+                <div>
+                    <button id="set-volume-btn" style="width:150px;" disabled>set volume</button>
+                    : <input id="volume-input" type="number" min="0" max="1.0" step="0.1" value="1.0" style="width:50px;" />
+                </div>
+
+                <div>
+                    <button id="fullscreen-btn" style="width:150px;">fullscreen</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="width:300px;height:200px;float:left;border-right:1px solid white;box-sizing:border-box;">
+            <div style="width:100%; height:20px; background-color:blue; color:white;">
+                Track Control
+            </div>
+
+            <div style="background-color: #2aabd2; width:100%; height:100%;">
+                <div>
+                    <button id="remove-all-btn" style="width:150px;">remove all</button>
+                </div>
+
+                <div>
+                    <button id="remove-track-btn" style="width:150px;">remove track</button>
+                    : <input id="track-idx-input" type="number" min="0" max="0" step="1" value="0" style="width:50px;" />
+                </div>
+
+                <div>
+                    <button id="add-track-btn" style="width:150px;">add track</button>
+                </div>
+
+                <div>
+                    <button id="rm-node-btn" disabled style="width:150px;">remove node</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="width:500px;height:200px;float:left;border-right:1px solid white;box-sizing:border-box;">
+            <div style="width:100%; height:20px; background-color:blue; color:white;">
+                Operations Control
+            </div>
+
+            <div style="background-color: #2aabd2; width:100%; height:100%;">
+                <div>
+                    <button id="crop-btn" style="width:150px;" disabled>crop</button>
+                </div>
+                <div>
+                    <button id="hori-mirror-btn" style="width:200px;" disabled>hori mirror</button>
+                    <button id="vert-mirror-btn" style="width:200px;" disabled>vert mirror</button>
+                </div>
+                <div>
+                    <button id="angle-left-btn" style="width:200px;" disabled>angle-left mirror</button>
+                    <button id="angle-right-btn" style="width:200px;" disabled>angle-right mirror</button>
+                </div>
+                <div>
+                    <button id="move-node-track2nd-incr5s-btn" style="width:240px;">track[1]node[0]: move+5s</button>
+                    <button id="move-node-track2nd-decr1s-btn" style="width:240px;">track[1]node[0]: move-1s</button>
+                </div>
+                <div>
+                    <button id="split-node-track1st-start-incr1s-btn" style="width:240px;" title="aaa">
+                        track[0]node[0]: split start +1s</button>
+                    <button id="split-node-track2nd-end-incr1s-btn" style="width:240px;">
+                        track[1]node[0]: split end +1s</button>
+                </div>
+                <div>
+                    <button id="rm-filters-btn" style="width:100px;" disabled>remove filters</button>
+                    <button id="filter-gray-btn" style="width:100px;" disabled>add filter gray</button>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end operation area(medium -->
+
+
+
+    <!-- ----------------------------------------------------
+     --
+     --
+     --                    bottom area (bottom
+     --
+     --
+     ----------------------------------------------------- -->
+
+</div>
+
+</body>
+</html>
