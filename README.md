@@ -1,8 +1,12 @@
 # video-editor-render-web (VER-web)
 
+<img src="resource/show.jpg" />
+
 # Show case
 
 [http://39.106.146.94/](http://39.106.146.94/)
+
+<img src="resource/show_editor.jpg" />
 
 # API DOCS (2 MySelf)
 
