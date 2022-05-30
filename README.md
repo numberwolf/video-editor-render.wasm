@@ -25,7 +25,7 @@
 ### API: window.CYL_createVideoEditRender
 * Function
 ```c
-let controllerAVC = window.CYL_createVideoEditRender(config);
+let renderObject = window.CYL_createVideoEditRender(config);
 ```
 
 * Params
@@ -40,15 +40,15 @@ const config = {
 
 * Return
 ```c
-controllerAVC
+renderObject
 ```
 
 ## 2) render object ##
 
-### API: controllerAVC.main()
+### API: renderObject.main()
 * Function
 ```c
-controllerAVC.main();
+renderObject.main();
 ```
 
 * Params
@@ -61,10 +61,10 @@ void
 true/false
 ```
 
-### API: controllerAVC.createTrace()
+### API: renderObject.createTrace()
 * Function
 ```c
-controllerAVC.createTrace();
+renderObject.createTrace();
 ```
 
 * Params
@@ -77,10 +77,10 @@ void
 int 0/-1
 ```
 
-### API: controllerAVC.pushNodeByIdx(0, materialList[0])
+### API: renderObject.pushNodeByIdx(0, materialList[0])
 * Function
 ```c
-controllerAVC.pushNodeByIdx(0, materialList[0]);
+renderObject.pushNodeByIdx(0, materialList[0]);
 ```
 
 * Params
@@ -96,10 +96,10 @@ int 0/-1
 
 
 
-### API: controllerAVC.getMaxTraceLen()
+### API: renderObject.getMaxTraceLen()
 * Function
 ```c
-controllerAVC.getMaxTraceLen();
+renderObject.getMaxTraceLen();
 ```
 
 * Params
@@ -113,10 +113,10 @@ int track count
 ```
 
 
-### API: controllerAVC.dumpMat(record=true/false)
+### API: renderObject.dumpMat(record=true/false)
 * Function
 ```c
-controllerAVC.dumpMat(record=true/false);
+renderObject.dumpMat(record=true/false);
 ```
 
 * Params
@@ -129,10 +129,10 @@ record=true/false
 Track Object
 ```
 
-### API: controllerAVC.setLoadingMask(show=true/false)
+### API: renderObject.setLoadingMask(show=true/false)
 * Function
 ```c
-controllerAVC.setLoadingMask(show=true/false);
+renderObject.setLoadingMask(show=true/false);
 ```
 
 * Params
@@ -660,26 +660,26 @@ void
 # Event
 
 ```c
-controllerAVC.onVideoProbe = function(mediaInfo) {
-    console.log("CYL_createVideoEditRender - controllerAVC.onVideoProbe ", mediaInfo);
+renderObject.onVideoProbe = function(mediaInfo) {
+    console.log("CYL_createVideoEditRender - renderObject.onVideoProbe ", mediaInfo);
 };
-controllerAVC.onVideoPlayTime = function(pts) {
-    console.log("CYL_createVideoEditRender - controllerAVC.onVideoPlayTime ", pts);
+renderObject.onVideoPlayTime = function(pts) {
+    console.log("CYL_createVideoEditRender - renderObject.onVideoPlayTime ", pts);
 };
-controllerAVC.onVideoPlayFinished = function() {
-    console.log("CYL_createVideoEditRender - controllerAVC.onVideoPlayFinished ");
+renderObject.onVideoPlayFinished = function() {
+    console.log("CYL_createVideoEditRender - renderObject.onVideoPlayFinished ");
 };
-controllerAVC.onAddHistory = function(timelineJson) {
-    console.log("CYL_createVideoEditRender - controllerAVC.onAddHistory ", timelineJson);
+renderObject.onAddHistory = function(timelineJson) {
+    console.log("CYL_createVideoEditRender - renderObject.onAddHistory ", timelineJson);
 };
-controllerAVC.onRectLockTagID = function(tagId) {
-    console.log("CYL_createVideoEditRender - controllerAVC.onRectLockTagID ", tagId);
+renderObject.onRectLockTagID = function(tagId) {
+    console.log("CYL_createVideoEditRender - renderObject.onRectLockTagID ", tagId);
 };
-controllerAVC.onClickTagID = function(tagId) {
-    console.log("CYL_createVideoEditRender - controllerAVC.onClickTagID ", tagId);
+renderObject.onClickTagID = function(tagId) {
+    console.log("CYL_createVideoEditRender - renderObject.onClickTagID ", tagId);
 };
-g_renderObject.onUnselectTagId = function() {
-    console.log("CYL_createVideoEditRender - controllerAVC.onUnselectTagId ");
+renderObject.onUnselectTagId = function() {
+    console.log("CYL_createVideoEditRender - renderObject.onUnselectTagId ");
 };
 ```
 
