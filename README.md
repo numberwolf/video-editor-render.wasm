@@ -1,6 +1,6 @@
-# video-editor-render-web (VER-web)
+# video-editor-render-wasm (VER-wasm)
 
-> VER-web 是一个视频编辑图形渲染框架,支持多图层、内置Timeline结构进行渲染和预览.
+> VER-wasm 是一个视频编辑图形渲染框架,支持多图层、内置Timeline结构进行渲染和预览.
 > 
 > 适用于任何非线性编辑产品，可跨平台集成。
 
