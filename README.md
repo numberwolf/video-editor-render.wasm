@@ -1,12 +1,18 @@
 # video-editor-render-web (VER-web)
 
+> VER-web 是一个视频编辑图形渲染框架,支持多图层、内置Timeline结构进行渲染和预览.
+> 
+> 适用于任何非线性编辑产品，可跨平台集成。
+
+渲染框架调试页面 [sdk-render-index.html](sdk-render-index.html)
+
 <img src="resource/show.jpg" />
 
-# Show case
+# 成套非线性编辑产品
 
-* [http://39.106.146.94/](http://39.106.146.94/)
+* [http://39.106.146.94/ 点击体验](http://39.106.146.94/)
 
-* 商业合作 : porschegt23@foxmail.com  (麦女生)
+* <strong>商业合作 : porschegt23@foxmail.com  (麦女生)</strong>
 
 <img src="resource/show_editor.jpg" />
 
