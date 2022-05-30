@@ -12,7 +12,7 @@
 
 * [http://39.106.146.94/ 点击体验](http://39.106.146.94/)
 
-* <strong>商业合作 : porschegt23@foxmail.com  (麦女生)</strong>
+* <strong>商业合作 : porschegt23@foxmail.com  (麦女士)</strong>
 
 <img src="resource/show_editor.jpg" />
 
