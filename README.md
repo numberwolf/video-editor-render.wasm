@@ -10,7 +10,7 @@
 
 # 成套非线性编辑产品 - 样例
 
-* [http://v.yuveye.com](http://v.yuveye.com)
+* [http://v.yuveye.com【直接点击】](http://v.yuveye.com)
 
 * <strong>商业合作 : porschegt23@foxmail.com  (麦女士)</strong>
 
